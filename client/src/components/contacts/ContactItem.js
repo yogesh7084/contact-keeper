@@ -7,20 +7,20 @@ const ContactItem = ({ contact }) => {
   const { deleteContact, setCurrent, clearCurrent } = contactContext;
   const { id, name, email, phone, type } = contact;
 
-  const onDelete = () =>{
+  const onDelete = () => {
     deleteContact(id);
     clearCurrent();
   }
-  
+
   return (
     <div className='card bg-light'>
       <div className=''>
         <h1 className='text-primary text-left'>{name}{" "}
-        <span 
-        style={{ float: 'right' }}
-        className={'badge ' + (type === "professional" ? 'badge-success' : 'badge-primary')}>
-          {type.charAt(0).toUpperCase() + type.slice(1)}
-        </span>
+          <span
+            style={{ float: 'right' }}
+            className={'badge ' + (type === "professional" ? 'badge-success' : 'badge-primary')}>
+            {type.charAt(0).toUpperCase() + type.slice(1)}
+          </span>
         </h1>
       </div>
 
@@ -37,7 +37,7 @@ const ContactItem = ({ contact }) => {
         )}
       </ul>
       <p className='ml-3'>
-        <button className='btn btn-dark btn-sm' onClick={ ()=>{ setCurrent(contact); console.log(contact)}}>Edit</button>
+        <button className='btn btn-dark btn-sm' onClick={() => { setCurrent(contact); console.log(contact) }}>Edit</button>
         <button className='btn btn-danger btn-sm' onClick={onDelete}>Delete</button>
       </p>
 
