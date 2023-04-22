@@ -12,6 +12,7 @@ import ContactState from './context/contact/ContactState';
 import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
 import setAuthToken from './utils/setAuthToken';
+import PrivateRoute from './components/routing/PrivateRoutes';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -29,11 +30,10 @@ function App() {
               <div className="container">
                 <Alerts />
                 <Routes>
-                  <Route path="/" element={<Home />} />
+                  <Route path="/" element={<PrivateRoute component={Home} />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/register" element={<Register />} />
                   <Route path="/login" element={<Login />} />
-
                 </Routes>
               </div>
             </Fragment>
