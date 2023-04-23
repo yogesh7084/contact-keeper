@@ -33,7 +33,7 @@ router.post('/', [auth,
         }
 
         const { name, email, phone, type} = req.body;
-
+        console.log("adding contact :"+req.body)
         try{
             const newContact = new Contact({
                 name,
@@ -48,7 +48,6 @@ router.post('/', [auth,
         }catch(err){
             console.log(err.message);
             res.status(400).send('Server Error');
-
         }
 
     // res.send('Add Contact');
