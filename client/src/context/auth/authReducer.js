@@ -23,8 +23,8 @@ export default (state, action) => {
         case REGISTER_SUCCESS:
         case LOGIN_SUCCESS:
             localStorage.setItem('token', action.payload.token);
-            console.log("token stored");
-            console.log(action.payload);
+            // console.log("token stored");
+            // console.log(action.payload);
             return {
                 ...state,
                 ...action.payload,
@@ -36,8 +36,8 @@ export default (state, action) => {
         case AUTH_ERROR:
         case LOGIN_FAIL:
         case LOGOUT:
-            console.log("Removing token ");
-            localStorage.removeItem('token');
+            // console.log("Removing token ");
+            // localStorage.removeItem('token');
             return {
                 ...state,
                 token: null,
