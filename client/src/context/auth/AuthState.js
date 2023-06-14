@@ -37,8 +37,8 @@ const AuthState = props => {
 
         try {
             const res = await axios.get('http://localhost:5000/api/auth');
-            console.log("load User")
-            console.log(res.data)
+            // console.log("load User")
+            // console.log(res.data)
             initialState.isAuthenticated = true;
 
             dispatch({
